@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thả Vật Vào Chuồng</title>
+  <link rel="stylesheet" href="chuong.css" />
+</head>
+<body>
+
+  <h1>Thả Vật Vào Đúng Chuồng!</h1>
+  <div class="info">
+    <div class="lives">Mạng: <span id="lives">3</span> <span id="hearts">❤️❤️❤️</span></div>
+    <div class="timer">Thời gian: <span id="timer">0</span>s</div>
+  </div>
+
+  <div class="game-container">
+    <!-- CỘT CON VẬT: CHỈ ẢNH -->
+    <div class="column">
+      <div class="animal" data-animal="cat">
+        <img src="https://img.icons8.com/emoji/80/cat.png" alt="Mèo"/>
+      </div>
+      <div class="animal" data-animal="pig">
+        <img src="https://img.icons8.com/emoji/80/pig.png" alt="Lợn"/>
+      </div>
+      <div class="animal" data-animal="chicken">
+        <img src="https://img.icons8.com/emoji/80/chicken.png" alt="Gà"/>
+      </div>
+      <div class="animal" data-animal="duck">
+        <img src="https://img.icons8.com/emoji/80/duck.png" alt="Vịt"/>
+      </div>
+    </div>
+
+    <!-- CỘT CHUỒNG: GIỮ TÊN -->
+    <div class="column">
+      <div class="cage" data-cage="cat">
+        <img src="https://img.icons8.com/color/70/cat-house.png" alt="Chuồng mèo"/>
+        <div class="label">Chuồng Mèo</div>
+      </div>
+      <div class="cage" data-cage="pig">
+        <img src="https://img.icons8.com/color/70/piggy-bank.png" alt="Chuồng lợn"/>
+        <div class="label">Chuồng Lợn</div>
+      </div>
+      <div class="cage" data-cage="chicken">
+        <img src="https://img.icons8.com/color/70/chicken.png" alt="Chuồng gà"/>
+        <div class="label">Chuồng Gà</div>
+      </div>
+      <div class="cage" data-cage="duck">
+        <img src="https://img.icons8.com/color/70/duck.png" alt="Chuồng vịt"/>
+        <div class="label">Chuồng Vịt</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="message" id="message"></div>
+
+  <!-- Màn hình hoàn thành -->
+  <div class="overlay" id="complete-overlay">
+    <div class="modal">
+      <h2>GAME COMPLETE!</h2>
+      <p>Score: <strong id="final-score">4</strong></p>
+      <p>Time: <strong id="final-time">31.8s</strong></p>
+      <p>You're on the leaderboard!</p>
+      <input type="text" id="player-name" placeholder="Nhập tên của bạn" maxlength="15"/>
+      <button id="save-score-btn">Lưu Điểm</button>
+      <button id="restart-btn">Start again</button>
+      <div class="leaderboard" id="leaderboard">
+        <h3>Bảng Xếp Hạng</h3>
+        <ol id="leaderboard-list"></ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Màn hình thua -->
+  <div class="overlay" id="gameover-overlay">
+    <div class="modal">
+      <h2>GAME OVER!</h2>
+      <p>Bạn đã hết mạng!</p>
+      <button id="retry-btn">Thử lại</button>
+    </div>
+  </div>
+
+  <script src="chuong.js"></script>
+</body>
+</html>
